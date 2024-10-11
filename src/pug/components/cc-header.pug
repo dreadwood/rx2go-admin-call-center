@@ -1,0 +1,24 @@
+include /elements/images
+
+mixin cc-header({})
+  .cc-header
+    .cc-header__drop
+      | Provider:
+      button.cc-header__drop-btn
+        | TWILIO
+        +svg({ name: "arrow-dropdown" })
+    button.cc-header__refresh(aria-label="refresh")
+      +svg({ name: "refresh" })
+    .cc-header__consrols
+      - const onHeaderLabelClick = "this.classList.toggle('actv')"
+      button.cc-header__label.toogle(onclick=onHeaderLabelClick)
+
+        +svg({ name: "activity-cross", className: "activity-cross" })
+        +svg({ name: "done-2", className: "done-2" })
+        | Incoming Calls OFF
+      button.cc-header__label.call Call Script
+      button.cc-header__label
+        +svg({ name: "collapse" })
+        | Collapse
+      .cc-header__dial
+        +svg({ name: "dial" })

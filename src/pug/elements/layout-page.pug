@@ -1,8 +1,8 @@
-include ../elements/head
-include ../components/block-header
-include ../components/block-footer
+include /elements/head
+include /components/p-header
 
 - let title = ""
+- let headerTitle = ""
 
 block data
 
@@ -10,9 +10,14 @@ doctype html
 html(lang="en")
   +head({ title })
   body
-    +block-header({})
-    main
-      block content
-    +block-footer({})
-    block modal
-    include ../elements/script
+    section.p-layout
+      .p-layout__left
+        a.p-layout__logo(href="#")
+          +svg({ name: "/img/logo-rx2go.svg", width: 97, height: 25 })
+      .p-layout__right
+        +p-header({ title: headerTitle })
+        block content
+
+    //- block modal
+
+    include /elements/script

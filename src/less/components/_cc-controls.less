@@ -1,0 +1,40 @@
+.cc-controls {
+  position: fixed;
+  right: 34px;
+  bottom: 43px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cc-controls__btn {
+  .transition(background-color);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0;
+  padding: 0;
+  color: @color-white;
+  background-color: @color-cornflower-blue;
+  border: 0;
+  border-radius: 50%;
+  svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: currentcolor;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    background-color: @color-cornflower;
+    cursor: pointer;
+  }
+  &.green {
+    background-color: @color-dark-pastel-green;
+    &:not([disabled]):hover,
+    &:not([disabled]):focus-visible {
+      background-color: @color-lime-green-2;
+    }
+  }
+}

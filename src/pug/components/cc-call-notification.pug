@@ -1,0 +1,31 @@
+include /elements/images
+
+mixin cc-call-notification({})
+  .cc-call-notification
+    .cc-call-notification__item
+      .cc-call-notification__label.green
+        +svg({ name: "call-incoming" })
+      div
+        | Incoming Calls
+        .cc-call-notification__time 02:11
+    .cc-call-notification__item
+      .cc-call-notification__label
+        +svg({ name: "call-user" })
+      | Elon Musk
+    .cc-call-notification__item
+      .cc-call-notification__label
+        +svg({ name: "call-phone" })
+      | +1 (234) 567-8901
+      button.cc-call-notification__btn-copy(type="button")
+        +svg({ name: "copy-2" })
+    .cc-call-notification__controls
+      button.cc-call-notification__btn
+        +svg({ name: "dial" })
+      button.cc-call-notification__btn
+        +svg({ name: "call-add" })
+      button.cc-call-notification__btn
+        +svg({ name: "arrows" })
+      button.cc-call-notification__btn
+        +svg({ name: "mic" })
+      button.cc-call-notification__btn.red
+        +svg({ name: "call-end" })

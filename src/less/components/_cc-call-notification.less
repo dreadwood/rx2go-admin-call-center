@@ -1,0 +1,106 @@
+.cc-call-notification {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  color: @color-white;
+  background-color: @color-blue-crayola;
+  border-radius: 25px;
+}
+.cc-call-notification__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cc-call-notification__label {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: @color-blue-crayola;
+  background-color: @color-periwinkle-crayola-2;
+  border-radius: 50%;
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+  &.green {
+    color: @color-dark-pastel-green;
+  }
+}
+.cc-call-notification__time {
+  margin-top: 2px;
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: 700;
+}
+.cc-call-notification__btn-copy {
+  .transition(color);
+  display: block;
+  margin: 0;
+  margin-left: -4px;
+  padding: 0;
+  color: @color-white;
+  background-color: transparent;
+  border: 0;
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    color: @color-signal-blue;
+    cursor: pointer;
+  }
+}
+.cc-call-notification__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.cc-call-notification__btn {
+  .transition(color, background-color);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  color: @color-white;
+  background-color: @color-blue-crayola;
+  border: 1px solid @color-white;
+  border-radius: 50%;
+  svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: currentcolor;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    color: @color-blue-crayola;
+    background-color: @color-white;
+    cursor: pointer;
+  }
+  &.red {
+    color: @color-white;
+    background-color: @color-radical-red;
+    border-color: @color-radical-red;
+    &:not([disabled]):hover,
+    &:not([disabled]):focus-visible {
+      color: @color-radical-red;
+      background-color: @color-white;
+      border-color: @color-white;
+    }
+  }
+}

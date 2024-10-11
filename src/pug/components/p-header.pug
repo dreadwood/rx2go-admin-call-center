@@ -1,0 +1,13 @@
+include /elements/images
+include /components/form/f-search
+include /components/cc-header
+
+mixin p-header({ title, className })
+  header.p-layout__header(class=className)
+    h1.p-layout__header-title=title
+    .p-layout__header-content
+      +cc-header({})
+    form.p-layout__search(action="#" role="search")
+      +f-search({})
+    .p-layout__header-logo
+      img(src="/img/placeholder-vertical.jpg" width="40" height="40" alt="")

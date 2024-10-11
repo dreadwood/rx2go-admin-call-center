@@ -12,14 +12,12 @@ import postcss from 'gulp-postcss'
 import pug from 'gulp-pug'
 import rename from 'gulp-rename'
 import uglify from 'gulp-uglify-es'
-import * as dartSass from 'sass'
-import gulpSass from 'gulp-sass'
+import less from 'gulp-less'
 import sourcemap from 'gulp-sourcemaps'
 import svgstore from 'gulp-svgstore'
 import sync from 'browser-sync'
 
 const clean = async () => {
-  console.log(process.env)
   return await deleteAsync(['dist'])
 }
 
@@ -28,7 +26,7 @@ const copy = () => {
     .src(
       [
         'src/fonts/**/*.{woff,woff2}',
-        'src/img/*.{webm,webp}',
+        'src/img/*.{webm,webp,svg}',
         'src/favicon/**/*',
         'src/favicon.ico',
         'src/robots.txt'
@@ -39,20 +37,26 @@ const copy = () => {
 }
 
 const css = () => {
-  const sass = gulpSass(dartSass)
-  return gulp
-    .src('src/scss/index.scss')
-    .pipe(plumber())
-    .pipe(sourcemap.init())
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(postcss([autoprefixer({ remove: false })]))
-    .pipe(rename('style.css'))
-    .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(sync.stream())
-    .pipe(csso())
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('dist/css'))
+  return (
+    gulp
+      .src('src/less/index.less')
+      .pipe(plumber())
+      .pipe(sourcemap.init())
+      // .pipe(
+      //   less({
+      //     paths: [path.join(__dirname, 'less', 'includes')]
+      //   })
+      // )
+      .pipe(less())
+      .pipe(postcss([autoprefixer({ remove: false })]))
+      .pipe(rename('style.css'))
+      .pipe(sourcemap.write('.'))
+      .pipe(gulp.dest('dist/css'))
+      .pipe(sync.stream())
+      .pipe(csso())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('dist/css'))
+  )
 }
 
 const images = () => {
@@ -120,8 +124,9 @@ const js = () => {
 
 const html = () => {
   return gulp
-    .src('src/pug/pages/*.pug')
-    .pipe(pug({ pretty: true }))
+    .src('src/pug/pages/**/*.pug')
+    .pipe(plumber())
+    .pipe(pug({ pretty: true, basedir: 'src/pug' }))
     .pipe(gulp.dest('dist'))
 }
 
@@ -141,7 +146,7 @@ const server = () => {
 
   gulp.watch('src/pug/**/*.{pug,js}', gulp.series(html, refresh))
   gulp.watch('src/icon/**/*.svg', gulp.series(sprite, html, refresh))
-  gulp.watch('src/scss/**/*.scss', gulp.series(css))
+  gulp.watch('src/less/**/*.less', gulp.series(css))
   gulp.watch('src/js/**/*.js', gulp.series(js, refresh))
 }
 
@@ -150,9 +155,9 @@ export const build = gulp.series(
   copy,
   css,
   js,
-  // images,
-  // webp,
-  // avif,
+  images,
+  webp,
+  avif,
   sprite,
   html
 )

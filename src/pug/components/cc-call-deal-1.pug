@@ -1,0 +1,29 @@
+include /elements/images
+
+mixin cc-call-deal-1({})
+  .cc-call-deal
+    .cc-call-deal__top
+      .cc-call-deal__title Paste or dial a number
+      button.cc-call-deal__fullscreen
+        +svg({ name: "fullscreen" })
+    input.cc-call-deal__field(
+      type="text"
+      placeholder="Select a number"
+      value="+1 (234) 567-8901"
+    )
+    .cc-call-deal__numbers
+      button.cc-call-deal__num 1
+      button.cc-call-deal__num 2
+      button.cc-call-deal__num 3
+      button.cc-call-deal__num 4
+      button.cc-call-deal__num 5
+      button.cc-call-deal__num 6
+      button.cc-call-deal__num 7
+      button.cc-call-deal__num 8
+      button.cc-call-deal__num 9
+      button.cc-call-deal__num *
+      button.cc-call-deal__num 0
+      button.cc-call-deal__num #
+    button.cc-call-deal__call
+      +svg({ name: "call-incoming" })
+      | Call

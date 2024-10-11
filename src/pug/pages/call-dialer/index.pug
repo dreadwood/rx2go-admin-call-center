@@ -1,0 +1,25 @@
+extends /elements/layout-page
+include /components/cc-call-notification
+include /components/cc-controls
+include /components/cc-call-deal-1
+include /components/cc-call-deal-2
+include /components/buttons/cc-call-btn
+include /components/buttons/cc-update-btn
+include /components/buttons/cc-assign-btns
+
+block data
+  - title = "Rx2Go Admin: Call Center — Call Dialer"
+  - headerTitle = "Call Center"
+
+block content
+  .p-call-center
+    +cc-call-notification({})
+    .p-call-center__table-buttons
+      +cc-call-btn({})
+      +cc-update-btn({})
+      +cc-assign-btns({})
+    +cc-controls({})
+    .p-call-center__deal-left
+      +cc-call-deal-2({})
+    .p-call-center__deal-right
+      +cc-call-deal-1({})

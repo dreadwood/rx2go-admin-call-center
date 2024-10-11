@@ -1,0 +1,24 @@
+.cc-fav-star-btn {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  svg {
+    .transition(fill, stroke);
+    display: block;
+    fill: none;
+    stroke: @color-signal-blue;
+    stroke-width: 2px;
+  }
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+  &:not(.actv):hover svg {
+    stroke: @color-purple-blue;
+  }
+  &.actv svg {
+    fill: @color-brilliant-greenish-yellow;
+    stroke: @color-brilliant-greenish-yellow;
+  }
+}

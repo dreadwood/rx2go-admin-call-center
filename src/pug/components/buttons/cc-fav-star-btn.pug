@@ -1,0 +1,4 @@
+mixin cc-fav-star-btn({ isActiv })
+  - let clickHandler = "this.classList.toggle('actv')"
+  button.cc-fav-star-btn(class=isActiv && "actv" onclick=clickHandler)
+    +svg({ name: "star", width: 22, height: 22 })

@@ -1,0 +1,9 @@
+include /elements/images
+
+mixin cc-status-icon-label({ value })
+  include /data/labelsData
+  - const item = labelsData.find((it) => it.name === value)
+  if item
+    - const styleAttr = `color: ${item.color}; background-color: ${item.bgColor};`
+    .cc-status-icon-label(style=styleAttr)
+      +svg({ name: item.icon})

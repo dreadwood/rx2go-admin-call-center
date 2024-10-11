@@ -1,0 +1,49 @@
+include /elements/images
+include /components/label/cc-status-icon-label
+
+mixin cc-call-deal-2({})
+  .cc-call-deal
+    .cc-call-deal__top
+      .cc-call-deal__title Outbound call
+      .cc-call-deal__time 00:46
+      button.cc-call-deal__fullscreen
+        +svg({ name: "fullscreen" })
+
+    .cc-call-deal__person
+      .cc-call-deal__person-info
+        +picture({
+          image: "/img/userpic-white.png",
+          width: 42,
+          height: 42
+        })
+        div
+          .cc-call-deal__person-name Elon Musk
+          .cc-call-deal__person-phone +1 (234) 567-8901
+      .cc-call-deal__person-list
+        .cc-call-deal__person-order
+          | #19245347
+          +cc-status-icon-label({ value: "Driver Out" })
+        .cc-call-deal__person-order
+          | #19245347
+          +cc-status-icon-label({ value: "Route Optimized" })
+    input.cc-call-deal__field(type="text" placeholder="Select a number")
+    .cc-call-deal__numbers
+      button.cc-call-deal__num 1
+      button.cc-call-deal__num 2
+      button.cc-call-deal__num 3
+      button.cc-call-deal__num 4
+      button.cc-call-deal__num 5
+      button.cc-call-deal__num 6
+      button.cc-call-deal__num 7
+      button.cc-call-deal__num 8
+      button.cc-call-deal__num 9
+      button.cc-call-deal__num *
+      button.cc-call-deal__num 0
+      button.cc-call-deal__num #
+    .cc-call-deal__deal-controls
+      button.cc-call-deal__deal-btn
+        +svg({ name: "call-add" })
+      button.cc-call-deal__deal-btn
+        +svg({ name: "mic" })
+      button.cc-call-deal__deal-btn.red
+        +svg({ name: "call-end" })

@@ -1,0 +1,225 @@
+.cc-call-deal {
+  width: 312px;
+  padding: 12px;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgb(@color-gray-259 0.16);
+}
+.cc-call-deal__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.cc-call-deal__title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.cc-call-deal__time {
+  padding: 3px 8px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: @color-periwinkle-crayola-2;
+  border-radius: 30px;
+}
+.cc-call-deal__fullscreen {
+  .transition(background-color);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  background-color: rgb(@color-blue-crayola 0.15);
+  border: 0;
+  border-radius: 50%;
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: @color-blue-crayola;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: rgb(@color-blue-crayola 0.2);
+    cursor: pointer;
+  }
+}
+.cc-call-deal__person {
+  margin-top: -6px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background-color: @color-periwinkle-crayola-2;
+  border-radius: 16px;
+}
+.cc-call-deal__person-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cc-call-deal__person-photo {
+  display: block;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+}
+.cc-call-deal__person-name {
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  color: @color-blue-crayola;
+}
+.cc-call-deal__person-phone {
+  font-size: 16px;
+  line-height: 19px;
+}
+.cc-call-deal__person-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+.cc-call-deal__person-order {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 4px 4px 12px;
+  font-size: 16px;
+  line-height: 20px;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border-radius: 30px;
+}
+.cc-call-deal__field {
+  .transition(border-color);
+  width: 100%;
+  padding: 14px 11px;
+  font-family: @font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+  color: @color-signal-blue;
+  background-color: @color-white;
+  border: 1px solid @color-very-pale-blue-3;
+  border-radius: 12px;
+  outline: none;
+  appearance: none;
+  &::placeholder {
+    color: rgb(@color-signal-blue 0.6);
+  }
+  &[type='number']::-webkit-outer-spin-button,
+  &[type='number']::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+  &:hover,
+  &:focus-visible {
+    border-color: rgb(@color-signal-blue 0.5);
+  }
+}
+.cc-call-deal__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 16px;
+  width: max-content;
+  margin: 12px auto 16px auto;
+}
+.cc-call-deal__num {
+  .transition(background-color);
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 41px;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  background-color: @color-periwinkle-crayola-2;
+  border: 0;
+  border-radius: 12px;
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    background-color: @color-very-pale-blue-2;
+    cursor: pointer;
+  }
+}
+.cc-call-deal__call {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 13px 30px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  color: @color-white;
+  background-color: @color-mountain-meadow;
+  border: 0;
+  border-radius: 30px;
+  svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    fill: currentcolor;
+  }
+  &[disabled] {
+    opacity: 0.6;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    background-color: @color-dark-pastel-green;
+    cursor: pointer;
+  }
+}
+.cc-call-deal__deal-controls {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 16px;
+}
+.cc-call-deal__deal-btn {
+  .transition(background-color);
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  color: @color-blue-crayola;
+  background-color: rgb(@color-blue-crayola 0.15);
+  border: 0;
+  border-radius: 50%;
+  svg {
+    width: 28px;
+    height: 28px;
+    fill: currentcolor;
+  }
+  &[disabled] {
+    opacity: 0.6;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus-visible {
+    background-color: rgb(@color-blue-crayola 0.25);
+    cursor: pointer;
+  }
+  &.red {
+    color: @color-white;
+    background-color: @color-radical-red;
+    &:not([disabled]):hover,
+    &:not([disabled]):focus-visible {
+      background-color: @color-red;
+    }
+  }
+}

@@ -1,12 +1,6 @@
 {
-  "extends": ["stylelint-config-standard-scss", "./.stylelint-order.json"],
+  "extends": ["stylelint-config-standard-less", "./.stylelint-order.json"],
   "plugins": ["stylelint-prettier", "stylelint-order"],
-  "overrides": [
-    {
-      "files": ["**/*.scss"],
-      "customSyntax": "postcss-scss"
-    }
-  ],
   "rules": {
     "at-rule-empty-line-before": [
       "always",
@@ -47,18 +41,6 @@
     "no-descending-specificity": null,
     "rule-empty-line-before": "never",
     "selector-class-pattern": "",
-    "shorthand-property-no-redundant-values": null,
-    "scss/dollar-variable-colon-space-after": "at-least-one-space",
-    "scss/dollar-variable-empty-line-before": null,
-    "scss/double-slash-comment-empty-line-before": [
-      "always",
-      {
-        "except": ["inside-block"],
-        "ignore": ["between-comments"]
-      }
-    ],
-    "scss/no-global-function-names": null,
-    "scss/comment-no-empty": null,
-    "scss/at-import-partial-extension": null
+    "shorthand-property-no-redundant-values": null
   }
 }

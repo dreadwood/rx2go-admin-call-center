@@ -1,0 +1,7 @@
+mixin cc-actv-btn({ text, isActv, className })
+  - let clickHandler = "this.classList.toggle('actv')"
+  button.cc-actv-btn(
+    class=isActv && "actv"
+    class=className
+    onclick=clickHandler
+  )=text

@@ -1,0 +1,11 @@
+extends /elements/layout-page
+include /components/modal/cc-modal-incoming
+
+block data
+  - title = "Rx2Go Admin: Call Center — Incoming Calls"
+  - headerTitle = "Call Center"
+
+block content
+  .overlay.show(onclick="closeModal")
+    .overlay__dialog
+      +cc-modal-incoming({})
